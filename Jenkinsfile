@@ -90,6 +90,11 @@ pipeline{
                 }
             }
         }
+        stage('Develop stage'){
+            steps{
+                echo "Hii new stage"
+            }
+        }
         
     }
 }
