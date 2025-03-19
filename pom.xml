@@ -4,7 +4,7 @@
   <groupId>com.mycompany.app</groupId>
   <artifactId>DevOpsFarm</artifactId>
   <packaging>jar</packaging>
-  <version>5.0</version
+  <version>5.0</version>
   <name>DevOpsFarm App</name>
   <url>http://maven.apache.org</url>
   <dependencies>
