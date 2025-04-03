@@ -8,7 +8,8 @@ pipeline {
   stages{
     stage('Greetings'){
       steps{
-        echo "Hello ${params.NAME}
+        echo "Hello ${params.NAME}"
+      
       }
     }
   }
