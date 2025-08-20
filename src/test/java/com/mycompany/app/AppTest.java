@@ -19,7 +19,12 @@ public class AppTest
         final long result = new App().add(2, 3);
         assertThat(result, is(5L));
     }
-
+    @Test
+    public void twoAndThreeIsNine() throws Exception {
+        final long result = new App().add(2, 3);
+        assertThat(result, is(9L));
+    }
+    
     @Test
     public void twoAndZeroIsTwo() throws Exception {
         final long result = new App().add(2, 0);
