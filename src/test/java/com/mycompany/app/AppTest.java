@@ -27,7 +27,7 @@ public class AppTest
     @Test
     public void sevenAndTwoIsNine() throws Exception {
         final long result = new App().add(7, 2);
-        assertThat(result, is(6L));
+        assertThat(result, is(9L));
     }
     
     @Test
