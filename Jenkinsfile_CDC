@@ -1,5 +1,10 @@
 pipeline{
   agent any 
+  environment {
+    S3_BUCKET = "cdc-test-2025-bucket "
+    AWS_REGION = "us-east-1"
+    ARTIFACT = "target/DevOpsFarm-5.1.jar"
+  }
   tools {maven 'Maven_CDAC'}
   stages{
     stage('Git Clone'){
@@ -28,6 +33,16 @@ pipeline{
               '''
           }
       }
+    }
+    stage('Deploy to S3'){
+      steps{
+        withAWS(
+          credentials: 'AWS_CREDENTIALS',
+          region: "${AWS_REGION}"
+        ) {
+            sh 'aws s3 cp ${ARTIFACT} S3://${S3_BUCKET}/artifacts/'
         }
+      }
+    }
   }
 }
