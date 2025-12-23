@@ -8,6 +8,7 @@ pipeline{
   }
   parameters{
     choice(name: 'ENVIRONMENT', choices: ['Test', 'Prod'], description: 'Select Environment for deployment')
+    booleanParam(name: 'RUN_SONAR', defaultValue: true, description: 'Click checkbox to run Sonar stage')
   }
   tools {maven 'Maven_CDAC'}
   stages{
@@ -23,6 +24,9 @@ pipeline{
       }
     }
     stage('Sonar Scanning'){
+      when {
+        expression { params.RUN_SONAR == true }
+      }
       environment {
           scanner = tool 'Sonar'
       }
