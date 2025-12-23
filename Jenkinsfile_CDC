@@ -13,5 +13,20 @@ pipeline{
         sh 'mvn clean install'
       }
     }
+    stage('Sonar Scanning'){
+      environment {
+          scanner = tool 'Sonar'
+      }
+      steps{
+          withSonarQubeEnv('SonarQubeServer'){
+              sh '''
+                  ${scanner}/bin/sonar-scanner -Dsonar.projectKey=CDCJavaApp \
+                  -Dsonar.sources=. \
+                  -Dsonar.projectName=CDC \
+                  -Dsonar.java.binaries=target/
+              '''
+          }
+      }
+        }
   }
 }
