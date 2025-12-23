@@ -10,7 +10,7 @@ public class App
         int a;
         int b;
         int c;
-        int d;
+        int d
         return first + second;
     }
 
