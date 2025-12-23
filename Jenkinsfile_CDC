@@ -1,0 +1,11 @@
+pipeline{
+  agent any
+
+  stages{
+    stage('Git Clone'){
+      steps{
+        git branch: 'main', credentialsId: 'dinesh-github-credentials', url: 'https://github.com/DevopsFarmer/java-sample-app.git'
+      }
+    }
+  }
+}
