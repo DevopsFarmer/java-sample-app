@@ -40,7 +40,11 @@ pipeline{
           credentials: 'AWS_CREDENTIALS',
           region: "${AWS_REGION}"
         ) {
-            sh 'aws s3 cp ${ARTIFACT} S3://${S3_BUCKET}/artifacts/'
+            s3Upload(
+            bucket: "${S3_BUCKET}",
+            path: "artifacts/",
+            file: "${ARTIFACT}"
+            )
         }
       }
     }
