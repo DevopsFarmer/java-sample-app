@@ -1,10 +1,16 @@
 pipeline{
   agent any
-
+  tools {maven 'Maven_CDAC'}
   stages{
     stage('Git Clone'){
       steps{
         git branch: 'main', credentialsId: 'dinesh-github-credentials', url: 'https://github.com/DevopsFarmer/java-sample-app.git'
+      }
+    }
+
+    stage('Build App'){
+      steps{
+        sh 'mvn clean install'
       }
     }
   }
