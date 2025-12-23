@@ -70,4 +70,15 @@ pipeline{
       }
     }
   }
+  post{
+    always {
+      echo "I am running always, whether Job fails or passed"
+    }
+    success {
+      echo "Deployed successfully"
+    }
+    failure {
+      echo "Deployment failed, please check logs for more details"
+    }
+  }
 }
