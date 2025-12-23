@@ -18,7 +18,7 @@ pipeline{
           scanner = tool 'Sonar'
       }
       steps{
-          withSonarQubeEnv('SonarQubeServer'){
+          withSonarQubeEnv('cdac_sonar'){
               sh '''
                   ${scanner}/bin/sonar-scanner -Dsonar.projectKey=CDCJavaApp \
                   -Dsonar.sources=. \
