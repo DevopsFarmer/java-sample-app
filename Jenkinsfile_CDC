@@ -23,7 +23,8 @@ pipeline{
                   ${scanner}/bin/sonar-scanner -Dsonar.projectKey=CDCJavaApp \
                   -Dsonar.sources=. \
                   -Dsonar.projectName=CDC \
-                  -Dsonar.java.binaries=target/
+                  -Dsonar.java.binaries=target \
+                  -Dsonar.organization=devopsfarm-trainings/
               '''
           }
       }
