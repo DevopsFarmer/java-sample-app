@@ -1,7 +1,7 @@
 pipeline{
   agent any 
   environment {
-    S3_BUCKET = "cdc-test-2025-bucket "
+    S3_BUCKET = "cdc-test-2025-bucket"
     AWS_REGION = "us-east-1"
     ARTIFACT = "target/DevOpsFarm-5.1.jar"
   }
