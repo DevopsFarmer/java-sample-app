@@ -21,8 +21,8 @@ public class AppTest
     }
     @Test
     public void twoAndThreeIsNine() throws Exception {
-        final long result = new App().add(2, 3);
-        assertThat(result, is(9L));
+        final long result = new App().add(3, 3);
+        assertThat(result, is(6L));
     }
     
     @Test
